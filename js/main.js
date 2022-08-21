@@ -43,10 +43,7 @@ elSiteForm.addEventListener("submit", function (evt) {
     elSiteListInput.append(elTextName, elTextSurName, elTextOldName, elTextStudy);
 
 
-    if (isNaN(elSiteOld.value)) {
-      alert("siz yoshingizda son kiritishingiz kerak")
-      elTextOldName.textContent = ""
-    }
+
   }
   console.log(person);
   console.log(contactArr);
