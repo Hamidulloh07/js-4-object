@@ -24,7 +24,9 @@ elSiteForm.addEventListener("submit", function (evt) {
 
   contactArr.push(person);
   elSiteListInput.innerHTML = "";
-  for (let i = 0; i < contactArr.length; i++) {
+
+  contactArr.forEach(element => {
+
     let elTextName = document.createElement("p");
     let elTextSurName = document.createElement("p");
     let elTextOldName = document.createElement("p");
@@ -36,17 +38,18 @@ elSiteForm.addEventListener("submit", function (evt) {
     elTextStudy.style.fontSize = "25px"
 
 
-    elTextName.textContent = `Foydalanuvchi ismi, ${contactArr[i].name}`;
-    elTextSurName.textContent = `Foydalanuvchi familiyasi, ${contactArr[i].Surname}`;
-    elTextOldName.textContent = `Foydalanuvchi yoshi, ${contactArr[i].age}`;
-    elTextStudy.textContent = `Foydalanuvchi o'qishi, ${contactArr[i].study}`;
+    elTextName.textContent = `Foydalanuvchi ismi, ${element.name}`;
+    elTextSurName.textContent = `Foydalanuvchi familiyasi, ${element.Surname}`;
+    elTextOldName.textContent = `Foydalanuvchi yoshi, ${element.age}`;
+    elTextStudy.textContent = `Foydalanuvchi o'qishi, ${element.study}`;
     elSiteListInput.append(elTextName, elTextSurName, elTextOldName, elTextStudy);
 
 
 
-  }
-  console.log(person);
-  console.log(contactArr);
+
+    console.log(person);
+    console.log(contactArr);
+  });
 
   elSiteNameInput.value = "";
   elSiteFirstNameInput.value = "";
@@ -54,8 +57,5 @@ elSiteForm.addEventListener("submit", function (evt) {
   elSiteStudyInput.value = "";
 });
 
-elBtnReset.addEventListener("click", function(){
-
-
+elBtnReset.addEventListener("click", function () {
 })
-
